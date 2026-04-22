@@ -82,6 +82,7 @@ const makeGalleryItem = ({ preview, original, description }) => {
   imageEl.alt = description;
   imageEl.width = 360;
   imageEl.height = 200;
+  imageEl.className = 'gallery-image';
 
   galleryItemEl.appendChild(galleryLinkEl);
   galleryLinkEl.appendChild(imageEl);

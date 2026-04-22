@@ -17,7 +17,7 @@ if (savedData) {
 form.addEventListener('input', event => {
   const { name, value } = event.target;
   if (name === 'email' || name === 'message') {
-    formData[name] = value.trim();
+    formData[name] = value;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
   }
 });
@@ -25,7 +25,8 @@ form.addEventListener('input', event => {
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  const { email, message } = formData;
+  const email = formData.email.trim();
+  const message = formData.message.trim();
 
   if (!email || !message) {
     alert('Fill please all fields');
